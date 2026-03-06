@@ -1,0 +1,7 @@
+/* Redirects for Netlify SPA */
+/* All paths redirect to index.html to allow React to handle routing */
+/* This is good practice even if you don't use React Router yet */
+/* For Vite projects, this should go in the 'public' folder */
+/* But Netlify can also read it from the root if configured */
+
+/* /index.html 200 */

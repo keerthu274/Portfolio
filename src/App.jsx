@@ -29,27 +29,59 @@ function App() {
     {
       title: "Exploratory Data Analysis with MySQL",
       desc: "Performed exploratory data analysis on structured datasets using SQL queries. Extracted insights and identified trends through data summarisation and aggregation.",
-      tags: ["MySQL", "Data Analysis", "SQL Optimization"]
+      tags: ["MySQL", "Data Analysis", "SQL Optimization"],
+      github: "https://github.com/keerthu274"
     },
     {
       title: "Data Cleaning in MySQL",
       desc: "Transformed raw datasets into clean, structured formats. Applied techniques to handle missing data, remove duplicates, and standardise entries.",
-      tags: ["MySQL", "Data Cleaning", "Data Quality"]
+      tags: ["MySQL", "Data Cleaning", "Data Quality"],
+      github: "https://github.com/keerthu274"
     },
     {
       title: "Power BI Job Simulation (PwC Forage)",
       desc: "Completed a business data analysis simulation focusing on customer retention and call centre trends. Designed Power BI dashboards to communicate key findings.",
-      tags: ["Power BI", "Data Visualization", "Business Insights"]
+      tags: ["Power BI", "Data Visualization", "Business Insights"],
+      github: "https://github.com/keerthu274"
     },
     {
       title: "Tech Career Roadmap",
       desc: "Developed a full-stack web application for student career path exploration. Designed front-end with HTML, CSS, and JS with PHP/MySQL backend.",
-      tags: ["Full Stack", "React", "PHP", "MySQL"]
+      tags: ["Full Stack", "React", "PHP", "MySQL"],
+      github: "https://github.com/keerthu274"
     },
     {
       title: "Veterinary Management System",
       desc: "Created a database-driven management system focused on data validation, database integration, and responsive UI design.",
-      tags: ["PHP", "MySQL", "UI/UX"]
+      tags: ["PHP", "MySQL", "UI/UX"],
+      github: "https://github.com/keerthu274"
+    }
+  ];
+
+  const certifications = [
+    {
+      title: "Agile Project Management",
+      issuer: "LinkedIn Learning",
+      date: "Oct 2025",
+      link: "https://www.linkedin.com/in/keerthanap27/details/certifications/"
+    },
+    {
+      title: "Power BI Job Simulation",
+      issuer: "PwC Switzerland / Forage",
+      date: "Mar 2025",
+      link: "https://www.theforage.com/simulations/pwc-ch/power-bi-job-simulation-pwc"
+    },
+    {
+      title: "DBMS & SQL: Complete Pack",
+      issuer: "Udemy",
+      date: "Oct 2024",
+      link: "https://www.udemy.com/certificate/UC-DBMS-SQL/"
+    },
+    {
+      title: "Mega Microsoft Office Course",
+      issuer: "Udemy",
+      date: "Apr 2024",
+      link: "https://www.udemy.com/certificate/UC-OFFICE/"
     }
   ];
 
@@ -146,7 +178,7 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills & Certs Section */}
       <section id="skills" className="skills">
         <div className="container">
           <h2 className="section-title">Technical Skills</h2>
@@ -179,6 +211,19 @@ function App() {
               </ul>
             </div>
           </div>
+
+          <h3 className="sub-section-title mt-2">Certifications</h3>
+          <div className="certs-grid mt-1">
+            {certifications.map((cert, i) => (
+              <a key={i} href={cert.link} target="_blank" rel="noreferrer" className="cert-card">
+                <div>
+                  <h4>{cert.title}</h4>
+                  <p>{cert.issuer} • {cert.date}</p>
+                </div>
+                <span className="cert-icon">📜</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -191,9 +236,12 @@ function App() {
               <div key={i} className="project-card">
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>
-                <div className="tags">
+                <div className="tags mb-1">
                   {p.tags.map(t => <span key={t}>{t}</span>)}
                 </div>
+                <a href={p.github} target="_blank" rel="noreferrer" className="project-link">
+                  View on GitHub <span className="icon">→</span>
+                </a>
               </div>
             ))}
           </div>
