@@ -140,8 +140,20 @@ function App() {
       <section id="home" className="hero">
         <div className="container">
           <div className="hero-text">
-            <h5>Hello, I'm</h5>
-            <h1>KEERTHANA POOBALASINGAM</h1>
+            <h5 className="reveal-text">
+              {"Hello, I'm".split("").map((char, index) => (
+                <span key={index} style={{ animationDelay: `${index * 0.05}s` }}>
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </h5>
+            <h1 className="reveal-text">
+              {"KEERTHANA POOBALASINGAM".split("").map((char, index) => (
+                <span key={index} style={{ animationDelay: `${0.5 + index * 0.05}s` }}>
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </h1>
             <h3>Junior Data Analyst</h3>
             <p>Computing student passionate about turning data into meaningful insights using SQL, Power BI, and Excel.</p>
             <div className="hero-btns">
